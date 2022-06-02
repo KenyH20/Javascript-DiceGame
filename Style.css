@@ -1,0 +1,94 @@
+Body{
+    background: url(https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
+.NewGame{
+    position: absolute;
+    background: none;
+    border-radius: 50%;
+    display: flex;
+    font-size: 20px;
+    
+}
+
+:hover.NewGame{
+    position: absolute;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+    font-size: 20px;
+    transition: 0.4s ease-in-out;
+    
+}
+
+.PlayerLine{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 60px;
+    font-size: 30px;
+    
+
+}
+
+.Dice{
+
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    display: none;
+}
+
+.ScoreLine{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+    font-size: 30px;
+    
+
+}
+
+.CurrentLine{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 70px;
+    font-size: 20px;
+    
+
+}
+
+.CurrentScore{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+
+}
+
+
+.RollHoldSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.RollDiceBtn{
+    margin-right: 60px;
+}
+
+.HoldBtn{
+   
+    margin-left: 60px;
+}
