@@ -92,3 +92,10 @@ Body{
    
     margin-left: 60px;
 }
+
+.Winning{
+    position: absolute;
+    margin-top: -300px;
+    font-size: 100px;
+    display: block;
+}
