@@ -38,11 +38,12 @@ function Restart() {
     document.querySelector(".CurrentScoreOne").textContent= 0;
     document.querySelector(".CurrentScoreTwo").textContent= 0;
     document.querySelector(".Dice").style.visibility="hidden";
-    ScorePlayerOne.style.Visibility="visible"
-    ScorePlayerTwo.style.Visibility="visible"
-    document.querySelector(".Winner").style.visibility="Hidden"
-    document.querySelector(".PlayerTurn").style.Visibility="Visible"
-    document.querySelector(".PlayerTurn").style.left="20px"
+    ScorePlayerOne.style.visibility="visible";
+    ScorePlayerTwo.style.visibility="visible";
+    document.querySelector(".Winner").style.visibility="Hidden";
+    document.querySelector(".PlayerTurn").style.visibility="Visible";
+    document.querySelector(".PlayerTurn").style.left="20px";
+
 
 
     
@@ -82,6 +83,19 @@ RollDiceBtn.addEventListener("click", ()=>{
     let Dice = Math.floor(Math.random()*DiceNumber.length);
     document.querySelector(".Dice").src=DiceNumber[Dice];
     document.querySelector(".Dice").style.visibility="visible";
+   
+    
+    if (CurrentScoreOne>=100) {
+        document.querySelector(".Dice").style.visibility="hidden";
+        document.querySelector(".PlayerTurn").style.visibility="hidden";
+       
+    }
+
+    if (CurrentScoreTwo>=100) {
+        document.querySelector(".Dice").style.visibility="hidden";
+        document.querySelector(".PlayerTurn").style.visibility="hidden";
+    
+    }
 
 if(PlayerOne){
     
@@ -178,21 +192,21 @@ HoldBtn.addEventListener("click", ()=>{
         
         if (CurrentScoreOne>=100) {
             document.querySelector(".Winner").textContent="Player One is the Winner !!";
-            document.querySelector(".Winner").style.visibility="Visible"
+            document.querySelector(".Winner").style.visibility="Visible";
             document.querySelector(".Dice").style.visibility="hidden";
             ScorePlayerOne.style.visibility="hidden";
             ScorePlayerTwo.style.visibility="hidden";
-            document.querySelector(".PlayerTurn").style.Visibility="Hidden"
+            document.querySelector(".PlayerTurn").style.visibility="hidden";
 
         }       
 
         if (CurrentScoreTwo>=100) {
             document.querySelector(".Winner").textContent="Player Two is the Winner !!";
-            document.querySelector(".Winner").style.visibility="Visible"
-            document.querySelector(".Dice").style.display="none";
-            ScorePlayerTwo.style.visibility="Hidden"
-            ScorePlayerOne.style.visibility="Hidden"
-            document.querySelector(".PlayerTurn").style.Visibility="Hidden"
+            document.querySelector(".Winner").style.visibility="Visible";
+            document.querySelector(".Dice").style.visibility="hidden";
+            ScorePlayerTwo.style.visibility="Hidden";
+            ScorePlayerOne.style.visibility="Hidden";
+            document.querySelector(".PlayerTurn").style.visibility="hidden";
 
         }
 
