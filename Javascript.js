@@ -26,36 +26,76 @@ let PlayerTwo= false;
 
 
 
+function Restart() {
+    PlayerOne=true;
+    PlayerTwo=false;
+    ScoreP1=0;
+    ScoreP2=0;
+    CurrentScoreOne=0;
+    CurrentScoreTwo=0;
+    ScorePlayerOne.textContent= ScoreP1 = 0;
+    ScorePlayerTwo.textContent= ScoreP2 = 0;
+    document.querySelector(".CurrentScoreOne").textContent= 0;
+    document.querySelector(".CurrentScoreTwo").textContent= 0;
+    document.querySelector(".Dice").style.visibility="hidden";
+    ScorePlayerOne.style.Visibility="visible"
+    ScorePlayerTwo.style.Visibility="visible"
+    document.querySelector(".Winner").style.visibility="Hidden"
+    document.querySelector(".PlayerTurn").style.Visibility="Visible"
+    document.querySelector(".PlayerTurn").style.left="20px"
+
+
+    
+}
+
 function SwitchPlayer(){
     if (PlayerOne) {
+       
 
         PlayerOne=false;
         PlayerTwo=true;
         
     } else {
+      
         PlayerOne=true;
         PlayerTwo=false;
         
+        
+    }
+
+    if (PlayerOne){
+        document.querySelector(".PlayerTurn").style.left="20px"
+        document.querySelector(".PlayerTurn").textContent="P1 Turn"
+
+
+    }else{
+        document.querySelector(".PlayerTurn").style.left="1300px"
+        document.querySelector(".PlayerTurn").textContent="P2 Turn"
     }
     
 }
 
 
 
+
 RollDiceBtn.addEventListener("click", ()=>{
     let Dice = Math.floor(Math.random()*DiceNumber.length);
     document.querySelector(".Dice").src=DiceNumber[Dice];
-    document.querySelector(".Dice").style.display="block";
+    document.querySelector(".Dice").style.visibility="visible";
 
 if(PlayerOne){
+    
+
     if (Dice==0) {
-     
+        ScorePlayerOne.textContent= ScoreP1 = 0;
+        SwitchPlayer();
     }
+        
         
     
     
     if (Dice==1) {
-        ScorePlayerOne.textContent = ScoreP1 +=  diceTwo
+        ScorePlayerOne.textContent= ScoreP1 += diceTwo
     }
     
     if (Dice===2) {
@@ -79,7 +119,9 @@ if(PlayerOne){
 else{
     if (Dice==0) {
         ScorePlayerTwo.textContent= ScoreP2 = 0;
-        SwitchPlayer();}
+        
+        SwitchPlayer();
+      ;}
         
     
     
@@ -103,6 +145,7 @@ else{
         ScorePlayerTwo.textContent= ScoreP2 += diceSix
     }
 }
+
 })
 
 
@@ -112,18 +155,13 @@ HoldBtn.addEventListener("click", ()=>{
         ScorePlayerOne.textContent = 0
         ScoreP1 =0
         
-        if(CurrentScoreOne!==0){
-            SwitchPlayer();
-            document.querySelector(".Dice").style.display="none";
+    if(CurrentScoreOne!==0){
+        SwitchPlayer();
+        document.querySelector(".Dice").style.visibility="hidden";
             
-        }
-        
-    else if (CurrentScoreOne>=100) {
-       
-        document.querySelector(".Winning").textContent="PlayerOne is the Winner !";    
+    }
 
-
-}
+     
 
         
     } else {
@@ -133,27 +171,38 @@ HoldBtn.addEventListener("click", ()=>{
 
         if(CurrentScoreTwo!==0){
             SwitchPlayer();
-            document.querySelector(".Dice").style.display="none";
+            document.querySelector(".Dice").style.visibility="hidden";
         }
-        else if (CurrentScoreTwo>=100) {
-            WinnerMessage.style.display="block"
-            document.querySelector(".Dice").style.display="none"
-            WinnerMessage.textContent="PlayerTwo is the Winner !"
-            
-            }
-                 
-            
-            }
-    });
+
+     
+        
+        if (CurrentScoreOne>=100) {
+            document.querySelector(".Winner").textContent="Player One is the Winner !!";
+            document.querySelector(".Winner").style.visibility="Visible"
+            document.querySelector(".Dice").style.visibility="hidden";
+            ScorePlayerOne.style.visibility="hidden";
+            ScorePlayerTwo.style.visibility="hidden";
+            document.querySelector(".PlayerTurn").style.Visibility="Hidden"
+
+        }       
+
+        if (CurrentScoreTwo>=100) {
+            document.querySelector(".Winner").textContent="Player Two is the Winner !!";
+            document.querySelector(".Winner").style.visibility="Visible"
+            document.querySelector(".Dice").style.display="none";
+            ScorePlayerTwo.style.visibility="Hidden"
+            ScorePlayerOne.style.visibility="Hidden"
+            document.querySelector(".PlayerTurn").style.Visibility="Hidden"
+
+        }
+
+
+}});
+
+NewGameBtn.addEventListener("click",()=>{
+    Restart()
+})
 
 
 
-function Restart() {
-    PlayerOne=true;
-    PlayerTwo=false;
-    ScoreP1=0;
-    ScoreP2=0;
-    CurrentScoreOne=0;
-    CurrentScoreTwo=0;
-    
-}
+
